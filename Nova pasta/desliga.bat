@@ -1,0 +1,1 @@
+shutdown -s -t 60 -c "Desligamento programado para daqui a 1 hora. salve seu trabalho!"
