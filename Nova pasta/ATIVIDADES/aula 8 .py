@@ -67,6 +67,8 @@
 # else:
 #     print("O número é menor ou igual a cinco.")
 
+# melhorado
+
 
 
 
@@ -228,11 +230,56 @@
 
 # 9. O Loop Eterno
 
-tentativas = 1
-while tentativas <= 3:
-    print("Tentando conectar...")
+# tentativas = 1
+# while tentativas <= 3:
+#     print("Tentando conectar...")
 
 
 #correção
+
+
+# tentativas = 1
+# while tentativas <= 3:
+#     print("Tentando conectar...")
+#     tentativas += 1
+
+
+#melhorado
+
+
+
+
+
+
+
+
+
+# 10. A Senha Teimosa
+# O programa deve pedir a senha até que o usuário digite "python123"
+
+
+# senha = ""
+
+# while senha == "phyton123":
+#     print("Acesso concedido!")
+
+
+# correção
+
+
+senha = input("Digite sua senha")
+
+while senha == "phyton123":
+    print("Acesso concedido")
+
+    break
+
+print("Acesso negado")
+
+
+#melhorado
+
+# print("")
+# senha = ("Digite sua senha")
 
 
