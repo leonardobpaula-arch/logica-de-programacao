@@ -267,19 +267,18 @@
 # correção
 
 
-senha = input("Digite sua senha")
+# senha = input("Digite sua senha")
 
-while senha == "phyton123":
-    print("Acesso concedido")
+# while senha == "phyton123":
+#     print("Acesso concedido")
 
-    break
+#     break
 
-print("Acesso negado")
+# print("Acesso negado")
 
 
 #melhorado
 
-# print("")
-# senha = ("Digite sua senha")
+
 
 
