@@ -69,3 +69,4 @@ elif entrada == "interfone":
 
 else:
     print("Obrigado pela visita. Volte sempre")
+
