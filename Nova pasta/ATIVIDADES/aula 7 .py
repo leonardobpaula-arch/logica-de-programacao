@@ -33,20 +33,20 @@
 print("Bem vindo")
 print("Qual é o modelo do veiculo e a placa do carro?")
 
-modelo = input("Insira o modelo do veículo")
+modelo = input("Insira o modelo do veículo ")
 
-placa = input("Insira a placa do carro")
+placa = input("Insira a placa do carro ")
 
 print("Como deseja entrar?")
 
-entrada = input("Opção 1 Ticket/Opção 2 TAG/Opção 3 interfone")
+entrada = input("Opção 1: Ticket/Opção 2: TAG/Opção 3: interfone ")
 
 if entrada == "ticket":
     print("Acesso liberado")
     
-    hora_entrada = float(input("Digite a hora de entrada"))
-    estacionamento = float(input("Qual o custo do estacionamento?"))
-    hora_saida = float(input("Quando você deixou o estacionamento"))
+    hora_entrada = float(input("Digite a hora de entrada "))
+    estacionamento = float(input("Qual o custo do estacionamento? "))
+    hora_saida = float(input("Quando você deixou o estacionamento "))
 
     permanencia = hora_saida - hora_entrada
 
