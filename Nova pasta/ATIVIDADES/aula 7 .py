@@ -68,5 +68,5 @@ elif entrada == "interfone":
     print("Ao sair, use o interfone novamente")
 
 else:
-    print("Obrigado pela visita. Volte sempre")
+    print("Erro! entrada negada!")
 
