@@ -314,7 +314,48 @@
 # o descarte for maior que 5% do total, exiba "Revisar Processo", caso contrário,
 # "Processo Otimizado".
 
+# import tkinter as tk
+# from tkinter import messagebox
 
+# def calcular_descarte():
+#     try:
+#         total_pecas = int(entrada_total.get())
+#         pecas_defeituosas = int(entrada_defeituosas.get())
+
+#         taxa_descarte = (pecas_defeituosas / total_pecas) * 100
+
+#         if taxa_descarte > 5:
+#             resultado.config(text="Revisar Processo")
+#         else:
+#             resultado.config(text="Processo Otimizado")
+
+#     except ValueError:
+#         messagebox.showerror("Erro", "Digite apenas números inteiros.")
+
+
+# janela = tk.Tk()
+# janela.title("Controle de Descarte")
+# janela.geometry("500x500")
+# janela.configure(bg="light green")
+
+
+# tk.Label(janela, text="Total de peças produzidas:").pack(pady=5)
+# entrada_total = tk.Entry(janela)
+# entrada_total.pack()
+
+# tk.Label(janela, text="Total de peças defeituosas:").pack(pady=5)
+# entrada_defeituosas = tk.Entry(janela)
+# entrada_defeituosas.pack()
+
+
+# tk.Button(janela, text="Calcular", command=calcular_descarte).pack(pady=10)
+
+
+# resultado = tk.Label(janela, text="", font=("Arial", 12, "bold"))
+# resultado.pack(pady=10)
+
+
+# janela.mainloop()
 
 # 9. Validação de Medida: Uma peça deve ter entre 9.8mm e 10.2mm. Peça a medida e
 # diga se está dentro da tolerância, acima ou abaixo.
@@ -323,29 +364,37 @@
 # import tkinter as tk
 # from tkinter import messagebox
 
-# def validacao_dados():
-#     # try:
-#         entrada_medida_dados = float(ent_medida_peca.get())
-#     # except ValueError:
-#         if entrada_medida_dados == "":
-#             messagebox.showwarning("Aviso!", "Verificar Dados!")
-#         elif entrada_medida_dados >= 9.8 and entrada_medida_dados < 10.2:
-#             messagebox.showinfo("Resultado", f"O calculo da medida foi {entrada_medida_dados}")
+# def calcular_descarte():
+#     try:
+#         medida = float(total_metros.get())
+
+#         if 9.8 > medida:
+#             resultado.config(text="Abaixo do padrão")
+#         elif 10.2 < medida:
+#             resultado.config(text="Acima do padrão")
 #         else:
-#             messagebox.showerror("Erro", "Calculo aguardado")
+#             resultado.config(text="Dentro do padrão")
+
+#     except ValueError:
+#         messagebox.showerror("Erro", "Digite uma medida válida para a peça.")
 
 
 # janela = tk.Tk()
-# janela.title("Exercício 9")
+# janela.title("Controle de Descarte")
 # janela.geometry("500x500")
+# janela.configure(bg="light green")
 
-# lbl_medida_peca = tk.Label(janela, text="Validação de Peças")
-# lbl_medida_peca.pack()
 
-# ent_medida_peca = tk.Entry(janela)
-# ent_medida_peca.pack()
+# tk.Label(janela, text="Total de peças produzidas:").pack(pady=5)
+# total_metros = tk.Entry(janela)
+# total_metros.pack()
 
-# btn_enviar_validacao = tk.Button(janela, text="Calcular Valores", command=validacao_dados)
-# btn_enviar_validacao.pack()
+# tk.Button(janela, text="Calcular", command=calcular_descarte).pack(pady=10)
+
+# resultado = tk.Label(janela, text="", font=("Arial", 12, "bold"))
+# resultado.pack(pady=10)
+
 
 # janela.mainloop()
+
+
