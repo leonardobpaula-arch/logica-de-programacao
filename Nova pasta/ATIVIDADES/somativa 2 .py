@@ -313,3 +313,39 @@
 # 8. Cálculo de Descarte: Peça o total de peças produzidas e o total de defeituosas. Se
 # o descarte for maior que 5% do total, exiba "Revisar Processo", caso contrário,
 # "Processo Otimizado".
+
+
+
+# 9. Validação de Medida: Uma peça deve ter entre 9.8mm e 10.2mm. Peça a medida e
+# diga se está dentro da tolerância, acima ou abaixo.
+
+
+# import tkinter as tk
+# from tkinter import messagebox
+
+# def validacao_dados():
+#     # try:
+#         entrada_medida_dados = float(ent_medida_peca.get())
+#     # except ValueError:
+#         if entrada_medida_dados == "":
+#             messagebox.showwarning("Aviso!", "Verificar Dados!")
+#         elif entrada_medida_dados >= 9.8 and entrada_medida_dados < 10.2:
+#             messagebox.showinfo("Resultado", f"O calculo da medida foi {entrada_medida_dados}")
+#         else:
+#             messagebox.showerror("Erro", "Calculo aguardado")
+
+
+# janela = tk.Tk()
+# janela.title("Exercício 9")
+# janela.geometry("500x500")
+
+# lbl_medida_peca = tk.Label(janela, text="Validação de Peças")
+# lbl_medida_peca.pack()
+
+# ent_medida_peca = tk.Entry(janela)
+# ent_medida_peca.pack()
+
+# btn_enviar_validacao = tk.Button(janela, text="Calcular Valores", command=validacao_dados)
+# btn_enviar_validacao.pack()
+
+# janela.mainloop()
