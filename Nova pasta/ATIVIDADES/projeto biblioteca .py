@@ -13,40 +13,79 @@
 import tkinter as tk
 from tkinter import messagebox
 
-
-def janela_bemvindo():
-
+def validar_emprestimo():
+    tipo_usuario = usuario_var.get()
+    categoria = categoria_var.get()
     
-    janela = tk.Tk()
-    janela.title("Exemplo 2")
-    janela.geometry("300x300")
-    janela.configure(bg="light green")
+    try:
+        dias = int(entry_dias.get())
+    except ValueError:
+        messagebox.showerror("Erro", "Digite um número válido de dias.")
+        return
 
-    
-    
-    lbl_mensagem = tk.Label(janela, text="digite sua categoria")
-    lbl_mensagem.grid(row=0, column=0, pady=50, padx=50)
+    if categoria == "Raro" and tipo_usuario == "Comunidade Geral":
+        resultado.set("Empréstimo negado.\nLivros raros são exclusivos para alunos.")
+        return
 
-    categoria_usuario = tk.Entry(janela, font=("Arial", 12))
-    categoria_usuario.grid(row=0, column=1, pady=50, padx=50)
-
-    btn_mensagem = tk.Button(janela, text="Mensagem", command=janela_bemvindo)
-    btn_mensagem.grid(row=2, column=0, pady=10, padx=10)
-
-
-
-
-
-    categoria = categoria_usuario.get()
-
-    if categoria == "aluno":
-        messagebox.showinfo("Você está logado como aluno")
-
-    elif categoria == "comunidade geral":
-        messagebox.showinfo("Você está logado como comunidade geral")
+    if tipo_usuario == "Aluno":
+        limite = 14
     else:
-        messagebox.showwarning("aviso", "digite sua categoria")
+        limite = 7
+
+    if dias <= limite:
+        resultado.set("Empréstimo aprovado sem taxa.")
+    else:
+        taxa = (dias - limite) * 5
+        resultado.set(
+            f"Empréstimo aprovado com taxa.\n"
+            f"Valor da taxa: R$ {taxa:.2f}"
+        )
+janela = tk.Tk()
+janela.title("Biblioteca Comunitária")
+janela.geometry("500x500")
 
 
+tk.Label(janela, text="Tipo de Usuário").pack(pady=5)
 
-    janela.mainloop()
+usuario_var = tk.StringVar(value="Aluno")
+
+tk.Radiobutton(
+    janela, text="Aluno",
+    variable=usuario_var, value="Aluno"
+).pack()
+
+tk.Radiobutton(
+    janela, text="Comunidade Geral",
+    variable=usuario_var, value="Comunidade Geral"
+).pack()
+
+tk.Label(janela, text="Categoria do Livro").pack(pady=5)
+
+categoria_var = tk.StringVar(value="Comum")
+
+tk.OptionMenu(
+    janela,
+    categoria_var,
+    "Comum",
+    "Raro"
+).pack()
+
+tk.Label(janela, text="Quantidade de Dias").pack(pady=5)
+
+entry_dias = tk.Entry(janela)
+entry_dias.pack()
+
+tk.Button(
+    janela,
+    text="Validar Empréstimo",
+    command=validar_emprestimo
+).pack(pady=10)
+
+resultado = tk.StringVar()
+tk.Label(
+    janela,
+    textvariable=resultado,
+    fg="blue",
+    justify="center").pack(pady=10)
+
+janela.mainloop()
